@@ -1,3 +1,10 @@
+<!--
+    Nadia Corina Garcia Orozco A01242428
+    Laboratorio 1
+    Publicado en https://ncgo.github.io/ClaseWeb/
+    Repositorio: https://github.com/ncgo/ClaseWeb
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,17 +14,18 @@
     <script src="https://kit.fontawesome.com/c7de260041.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">    
     <title>Nadia Garcia: CV</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" />
 </head>
-<bod style="font-family: 'Open-Sans', sans-serif;">
-    <header style="text-align: center">
+<bod style="font-family: 'Atkinson Hyperlegible', sans-serif;">
+    <header style="text-align: center; position: sticky;">
         <h1>Nadia Corina Garcia Orozco</h1>
         <h2>Ciudad Juarez, Chihuahua</h2>
-        <nav style="position: sticky">
+        <nav>
             <a href="#objective">Objective</a> |
-            <a href="#experience">Experience</a> |
             <a href="#education">Education</a> |
+            <a href="#experience">Experience</a> |
             <a href="#projects">Projects</a> |
             <a href="#skills">Skills</a>
         </nav>
@@ -28,18 +36,57 @@
                 <p>Hi! I am Nadia Garcia, an incoming Program Manager intern @Microsoft with experience in web development, robotics, computer vision, content creation, teaching and leadership. I'm a STEM advocate and passionate about learning and teaching.</p>
             </section>
 
+            <section id="education">
+                <h3>Education</h3>
+                <div>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <span class="title">Tec de Monterrey Campus Monterrey</span> 
+                            </td>
+                            <td style="text-align: right">
+                                <strong>Expected graduation year: </strong>2023
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                B.S. in Computer Science and Technology
+                            </td>
+                            <td style="text-align: right">
+                                <strong>GPA: </strong>94/100
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <ul>
+                    <li><span class="category">Core coursework: </span>Data structures and Algorithms, Databases, Computer Vision</li>
+                    <li><span class="category">Activities: </span>Facebook LATAM Mentorship and Twitter #DevelopHer20 Mentee, She++ Ambassador, FIRST Lego League Coach</li>
+                    <li><span class="category">Awards: </span>#TwitterForEveryone Award at #BattleOfTheCamps20 Hackathon, Academic Talent 60% Scholarship Recipient, Outstanding Student EIC 2021</li>
+                </ul>
+            </section>
+
             <section id="experience">
                 <h3>Experience</h3>
                 <div>
                     <div>
-                        <div style="display: inline-block; width: 50%">
-                            <p class="title">MICROSOFT</p>
-                            <p>Program Manager Intern</p>
-                        </div>
-                        <div style="display: inline-block; width: 49%; text-align: right">
-                            <p><em>Remote</em></p>
-                            <p><em>June - August 2021</em></p>
-                        </div>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <span class="title">MICROSOFT</span> 
+                                </td>
+                                <td style="text-align: right">
+                                    <em>Remote</em>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                    Program Manager Intern
+                                </td>
+                                <td style="text-align: right">
+                                    <em>June - August 2021</em>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <ul>
                         <li>Led the design and development of a proof-of-concept Facebook Marketplace Adaptive Card widget for the Windows 11 Widgets Experience; enabled third party app developers to build their own widgets for Windows 11.</li>
@@ -50,14 +97,24 @@
                 
                 <div>
                     <div>
-                        <div style="display: inline-block; width: 50%">
-                            <p class="title">VANTTEC</p>
-                            <p>Had of Media</p>
-                        </div>
-                        <div style="display: inline-block; width: 49%; text-align: right">
-                            <p><em>Monterrey, Nuevo León</em></p>
-                            <p><em>February 2020 - Present</em></p>
-                        </div>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <span class="title">VANTTEC</span> 
+                                </td>
+                                <td style="text-align: right">
+                                    <em>Monterrey, Nuevo León</em>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                    Head of Media
+                                </td>
+                                <td style="text-align: right">
+                                    <em>February 2020 - Present</em>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <ul>
                         <li>Led a team of three people and impact 5000 users monthly through making the understanding of unmanned autonomous vehicles research more accessible to a non-technical public.</li>
@@ -69,14 +126,24 @@
 
                 <div>
                     <div>
-                        <div style="display: inline-block; width: 50%">
-                            <p class="title">PRIMAL TECHNOLOGIES</p>
-                            <p>Front-end Developer</p>
-                        </div>
-                        <div style="display: inline-block; width: 49%; text-align: right">
-                            <p><em>Ciudad Juarez, Chihuahua</em></p>
-                            <p><em>June - October 2020</em></p>
-                        </div>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <span class="title">PRIMAL TECHNOLOGIES</span> 
+                                </td>
+                                <td style="text-align: right">
+                                    <em>Ciudad Juárez, Chihuahua</em>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                    Front-end Developer
+                                </td>
+                                <td style="text-align: right">
+                                    <em>June - October 2020</em>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <ul>
                         <li>Used Vue.js to create commercial web and mobile responsive sites.</li>
@@ -84,37 +151,28 @@
                 </div>
             </section>
 
-            <section id="education">
-                <h3>Education</h3>
-                <div>
-                    <div style="display: inline-block; width: 50%">
-                        <p class="title" >Tec de Monterrey Campus Monterrey</p>
-                        <p>B.S. in Computer Science and Technology</p>
-                    </div>
-                    <div style="display: inline-block; width: 49%; text-align: right">
-                        <p><strong>Expected graduation year: </strong>2023</p>
-                        <p><strong>GPA: </strong>94/100</p>
-                    </div>
-                </div>
-                <ul>
-                    <li><span class="category">Core coursework: </span>Data structures and Algorithms, Databases, Computer Vision</li>
-                    <li><span class="category">Activities: </span>Facebook LATAM Mentorship and Twitter #DevelopHer20 Mentee, She++ Ambassador, FIRST Lego League Coach</li>
-                    <li><span class="category">Awards: </span>#TwitterForEveryone Award at #BattleOfTheCamps20 Hackathon, Academic Talent 60% Scholarship Recipient, Outstanding Student EIC 2021</li>
-                </ul>
-            </section>
-
             <section id="projects">
                 <h3>Projects</h3>
                 <div>
                     <div>
-                        <div style="display: inline-block; width: 50%">
-                            <p class="title">PROGRAMANDO UN MEXICO MEJOR</p>
-                            <p>Social Responsibility Director</p>
-                        </div>
-                        <div style="display: inline-block; width: 49%; text-align: right">
-                            <p><em>Computer Science and Technology Student Society</em></p>
-                            <p><em>August 2020 - Present</em></p>
-                        </div>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <span class="title">PROGRAMANDO UN MEXICO MEJOR</span> 
+                                </td>
+                                <td style="text-align: right">
+                                    <em>Computer Science and Technology Student Society</em>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Social Responsibility Director
+                                </td>
+                                <td style="text-align: right">
+                                    <em>August 2020 - Present</em>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <ul>
                         <li>Managed a team of 23 undergrad students impacting 50 children from low-income areas of Monterrey and San Luis Potosí through remote classes on programming, accessible web and videogame development. Maintained and managed the project’s <a href="https://www.programandounmexicomejor.com">website.</a></li>
@@ -124,14 +182,24 @@
 
                 <div>
                     <div>
-                        <div style="display: inline-block; width: 50%">
-                            <p class="title">ENTRÉNATE</p>
-                            <p>Product manager & developer</p>
-                        </div>
-                        <div style="display: inline-block; width: 49%; text-align: right">
-                            <p><em>Olimpiada Mexicana de Matemáticas en Chihuahua (OMMCH)</em></p>
-                            <p><em>Spring semester 2021</em></p>
-                        </div>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <span class="title">ENTRÉNATE</span> 
+                                </td>
+                                <td style="text-align: right">
+                                    <em>Olimpiada Mexicana de Matemáticas en Chihuahua (OMMCH)</em>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                    Product manager & developer
+                                </td>
+                                <td style="text-align: right">
+                                    <em>Spring semester 2021</em>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <ul>
                         <li>Designed, constructed, and managed the development of Entrénate, an iOS and iPadOS app for training students in the Mexican Mathematics Olympiad in Chihuahua and an administrator portal for my Mobile App Development Class using Swift, Firebase, and React.</li>
@@ -153,7 +221,7 @@
     </main>
     <footer style="text-align: center;">
         <address>
-            <img src="nadia.png" alt="Cartoon avatar of Nadia Garcia" height="100px" width="100px" style="border-radius: 50%">
+            <img src="assets/nadia.png" alt="Cartoon avatar of Nadia Garcia" height="100px" width="100px" style="border-radius: 50%">
             <p>Nadia Garcia</p>
             <p>
                 Institutional mail: <a href="mailto:a01242428@itesm.mx">a01242428@itesm.mx</a> <br>
@@ -182,5 +250,12 @@
 
     .category {
         font-weight: 600;
+    }
+
+    header {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        background-color: white;
     }
 </style>
