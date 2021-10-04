@@ -63,4 +63,11 @@ $(document).ready(function () {
       image.attr('data-isanimated', 'false')
     }
   })
+
+  $('#add-temas').on('click', function (e) {
+    e.preventDefault()
+    temas.push($('#temas-input').val())
+    populateButtons(temas, 'temas-button', '#temas-buttons')
+    $('#temas-input').val('')
+  })
 })
