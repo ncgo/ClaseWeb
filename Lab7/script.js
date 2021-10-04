@@ -1,11 +1,17 @@
 $(document).ready(function () {
-  var animals = ['dog', 'cat', 'rabbit', 'frog', 'chicken', 'bird', 'turtle']
+  var temas = [
+    'parks and recreation',
+    'brooklyn 99',
+    'new girl',
+    'the office',
+    'how i met your mother',
+  ]
 
-  populateButtons(animals, 'animal-button', '#animal-buttons')
+  populateButtons(temas, 'temas-button', '#temas-buttons')
 
   function populateButtons(arrayToUse, classToAdd, placeholder) {
     $(placeholder).empty()
-    for (var i = 0; i < animals.length; i++) {
+    for (var i = 0; i < temas.length; i++) {
       var a = $('<button>')
       a.addClass(classToAdd)
       a.attr('data-type', arrayToUse[i])
@@ -14,35 +20,35 @@ $(document).ready(function () {
     }
   }
 
-  $('#animal-buttons').on('click', '.animal-button', function () {
-    $('#animals').empty()
+  $('#temas-buttons').on('click', '.temas-button', function () {
+    $('#temas').empty()
     var search = $(this).attr('data-type')
     var queryUrl =
       'https://api.giphy.com/v1/gifs/search?q=' +
       search +
-      '&api_key=lv4LRtLumJVOd0Vai1fTOLtVXmRMDUns'
+      '&api_key=lv4LRtLumJVOd0Vai1fTOLtVXmRMDUns&limit=10'
     $.ajax({ url: queryUrl }).then(function (response) {
       console.log(response)
       var results = response.data
       for (var i = 0; i < results.length; i++) {
-        var animalDiv = $('<div class="animal-item">')
+        var temasDiv = $('<div class="temas-item">')
         var rating = results[i].rating
         var p = $('<p>').text('Rating: ' + rating)
 
         var animated = results[i].images.fixed_height.url
         var still = results[i].images.fixed_height_still.url
 
-        var animalImage = $('<img>')
-        animalImage.attr('src', still)
-        animalImage.attr('data-still', still)
-        animalImage.attr('data-animate', animated)
-        animalImage.attr('data-isAnimated', 'false')
-        animalImage.addClass('animal-image')
+        var temasImage = $('<img>')
+        temasImage.attr('src', still)
+        temasImage.attr('data-still', still)
+        temasImage.attr('data-animate', animated)
+        temasImage.attr('data-isAnimated', 'false')
+        temasImage.addClass('temas-image')
 
-        animalDiv.append(p)
-        animalDiv.append(animalImage)
+        temasDiv.append(p)
+        temasDiv.append(temasImage)
 
-        $('#animals').append(animalDiv)
+        $('#temas').append(temasDiv)
       }
     })
   })
