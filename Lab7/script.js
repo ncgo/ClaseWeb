@@ -42,7 +42,7 @@ $(document).ready(function () {
         temasImage.attr('src', still)
         temasImage.attr('data-still', still)
         temasImage.attr('data-animate', animated)
-        temasImage.attr('data-isAnimated', 'false')
+        temasImage.attr('data-isanimated', 'false')
         temasImage.addClass('temas-image')
 
         temasDiv.append(p)
@@ -53,5 +53,14 @@ $(document).ready(function () {
     })
   })
 
-  //if (state )
+  $('#temas').on('click', '.temas-item', function () {
+    var image = $(this).children('img.temas-image')
+    if (image.attr('data-isanimated') === 'false') {
+      image.attr('src', image.attr('data-animate'))
+      image.attr('data-isanimated', 'true')
+    } else {
+      image.attr('src', image.attr('data-still'))
+      image.attr('data-isanimated', 'false')
+    }
+  })
 })
