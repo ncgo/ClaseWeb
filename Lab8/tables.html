@@ -73,8 +73,10 @@
     for (var i = 0; i < data.length; i++) {
       console.log(data[i]);
       var listGroupItem = $("<li class='list-group-item-table'>");
-
-      listGroupItem.append($("<h2>").text("Name: " + data[i].name));
+      
+      listGroupItem.append($("<h2>").text("Mesa " + (i+1)));
+      listGroupItem.append($("<hr>"));
+      listGroupItem.append($("<h3>").text("Name: " + data[i].name));
       listGroupItem.append($("<h3>").text("Phone: " + data[i].phone));
       listGroupItem.append($("<h3>").text("Email: " + data[i].email));
       
