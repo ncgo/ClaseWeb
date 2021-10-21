@@ -6,7 +6,7 @@ var path = require('path')
 // Sets up the Express App
 // =============================================================
 var app = express()
-var PORT = 3000
+var PORT = process.env.PORT || 3000
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }))
@@ -14,22 +14,35 @@ app.use(express.json())
 
 // Mesas
 // =============================================================
-var reservaciones = [{}]
-var listaEspera = [{}]
+var mesasDisponibles = []
+var listaEspera = []
 
 // Routes
 // =============================================================
 
 // Basic route that sends the user first to the AJAX Page
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'view.html'))
+  res.sendFile(path.join(__dirname, 'home.html'))
 })
 
-// Displays all characters
-app.get('/api/characters', function (req, res) {
-  return res.json(characters)
+app.get('/reserve', function (req, res) {
+  res.sendFile(path.join(__dirname, 'reserve.html'))
 })
 
+app.get('/tables', function (req, res) {
+  res.sendFile(path.join(__dirname, 'tables.html'))
+})
+
+// Displays all reserved tables
+app.get('/api/tables', function (req, res) {
+  return res.json(mesasDisponibles)
+})
+
+app.get('/api/waitlist', function (req, res) {
+  return res.json(listaEspera)
+})
+
+/*
 // Displays a single character, or returns false
 app.get('/api/characters/:character', function (req, res) {
   var chosen = req.params.character
@@ -43,21 +56,24 @@ app.get('/api/characters/:character', function (req, res) {
   }
 
   return res.json(false)
-})
+})*/
 
-// Create New Characters - takes in JSON input
-app.post('/api/characters', function (req, res) {
+// Hacer una nueva reservacion - takes in JSON input
+app.post('/api/tables', function (req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
-  var newcharacter = req.body
+  var newTable = req.body
 
-  console.log(newcharacter)
-
-  // We then add the json the user sent to the character array
-  characters.push(newcharacter)
-
-  // We then display the JSON to the users
-  res.json(newcharacter)
+  console.log(newTable)
+  if (mesasDisponibles.length >= 5) {
+    listaEspera.push(newTable)
+    console.log('Agregado a lista de espera')
+    res.json(false)
+  } else {
+    mesasDisponibles.push(newTable)
+    console.log('Reservacion agregada')
+    res.json(true)
+  }
 })
 
 // Starts the server to begin listening

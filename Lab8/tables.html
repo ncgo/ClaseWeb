@@ -69,7 +69,31 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
 <script type="text/javascript">
+  $.get("/api/tables", function(data) {
+    for (var i = 0; i < data.length; i++) {
+      console.log(data[i]);
+      var listGroupItem = $("<li class='list-group-item-table'>");
 
+      listGroupItem.append($("<h2>").text("Name: " + data[i].name));
+      listGroupItem.append($("<h3>").text("Phone: " + data[i].phone));
+      listGroupItem.append($("<h3>").text("Email: " + data[i].email));
+      
+      $("#tableList").append(listGroupItem);
+    }
+  })
+
+  $.get("/api/waitlist", function (data) {
+      for (var i = 0; i < data.length; i++) {
+        console.log(data[i]);
+        var listGroupItem = $("<li class='list-group-item-table'>");
+
+        listGroupItem.append($("<h2>").text("Name: " + data[i].name));
+        listGroupItem.append($("<h3>").text("Phone: " + data[i].phone));
+        listGroupItem.append($("<h3>").text("Email: " + data[i].email));
+
+        $("#waitList").append(listGroupItem);
+      }
+    })
 
 
 

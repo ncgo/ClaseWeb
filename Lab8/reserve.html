@@ -56,7 +56,7 @@
                 <label for="reserve-email">Email</label>
                 <input type="text" class="form-control" id="reserve-email">
               </div>
-              <button type="submit" class="btn btn-primary submit">Reservar</button>
+              <button type="submit" class="btn btn-primary submit" id="add-table">Reservar</button>
             </form>
           </div>
         </div>
@@ -80,6 +80,26 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
-
+  $("#add-table").on("click", function(event) {
+    event.preventDefault()
+    var newTable = {
+      name: $("#reserve-name").val().trim(),
+      phone: $("#reserve-phone").val().trim(),
+      email: $("#reserve-email").val().trim()
+    };
+    
+    $.post("/api/tables", newTable)
+      .then(function (data) {
+        if (data) {
+          alert("Reservación exitosa")
+        } else {
+          alert("Ya no hay mesas disponibles. Haz sido agregado a la lista de espera")
+        }
+        $("#reserve-name").val("")
+        $("#reserve-phone").val("")
+        $("#reserve-email").val("")
+      })
+      
+  })
 
 </script>
